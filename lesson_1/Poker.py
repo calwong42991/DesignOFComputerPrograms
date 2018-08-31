@@ -21,6 +21,12 @@ def flush(hand):
   suits = [s for r,s in hand]
   return len(set(suits)) == 1
 
+def kind(n, ranks):
+  """ Return the first rank that this hand has exactly n of.
+      Return None if there is no n-of-a-kind in the hand."""
+  for r in ranks:
+    if ranks.count(r) == n: return r
+  return None
 
 def hand_rank(hand):
   "Return a value indicating the ranking of a hand."
