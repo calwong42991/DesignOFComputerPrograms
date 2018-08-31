@@ -6,6 +6,12 @@ modify the poker() function to return the best hand according to the hand_rank()
 def poker(hands):
   return max(hands, key=hand_rank)
 
+def card_ranks(cards):
+  "Return a list of the ranks, sorted with higher first"
+  ranks = ['--23456789TJQKA'.index(r) for r,s in cards]
+  ranks.sort(reverse = True)
+  return ranks
+
 def hand_rank(hand):
   "Return a value indicating the ranking of a hand."
   ranks = card_ranks(hand)
